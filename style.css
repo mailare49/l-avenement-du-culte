@@ -1,0 +1,966 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+.sheet-banner {
+    background-repeat: no-repeat;
+    background-size: 70%;
+    float:right;
+    background-image:url(https://nsm09.casimages.com/img/2021/05/12//21051209315124236417414215.png);
+}
+
+/*Feuille PJ*/
+
+.sheet-onglets-sheet[type="action"] {
+    text-align:center;
+    background-color: #7064AB;
+    font-family: 'Young Serif', serif;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    border-radius: 5px;
+    width:90%;
+    height: 25px;
+    color: black;
+    width:auto;
+    margin-left:7px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    text-align:center;
+    font-size:20px;
+}
+
+.charsheet .sheet-principal,
+.charsheet .sheet-equipement,
+.charsheet .sheet-grimoire,
+.charsheet .sheet-overlord {
+    display: none;
+}
+
+.charsheet .sheet-tabstoggle[value="principal"] ~ div.sheet-principal,
+.charsheet .sheet-tabstoggle[value="equipement"] ~ div.sheet-equipement,
+.charsheet .sheet-tabstoggle[value="grimoire"] ~ div.sheet-grimoire,
+.charsheet .sheet-tabstoggle[value="overlord"] ~ div.sheet-overlord {
+    display: block;
+}
+
+input.sheet-tab1
+{
+    width:150px;
+    height: 40px;
+    top: 5px;
+    left: 6px;
+    margin: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+div.sheet-tab1
+{
+    background-color: #5E3FC1;
+}
+
+input[type="checkbox"].sheet-damage {
+	opacity: 1;
+	width: 14px;
+	height: 14px;
+	position: relative;
+	top: 5px;
+	left: 6px;
+	margin: 1px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+div.sheet-tab-content
+{
+    display: none;
+}
+
+.sheet-wrapper1
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: black;
+    font-family: 'Young Serif', serif;
+}
+
+.sheet-char
+{
+    flex: 0 0 100%;
+}
+
+/*
+.charsheet perso-char-label
+{
+    color: black;
+    font-family: 'Young Serif', serif;
+}
+*/
+
+.sheet-char-textbox
+{
+    background:transparent;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid black;
+    box-shadow:none;
+    color: black;
+    margin-left: auto;
+}
+
+.sheet-perso-char
+{
+    color: black;
+    font-family: 'Young Serif', serif;
+}
+
+.sheet-perso-char-textbox
+{
+    background:transparent;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid black;
+    box-shadow:none;
+    color: black;
+    margin-left: 5px;
+    margin-bottom: 4px;
+    width: 23%;
+}
+
+.sheet-perso-char-textbox-resume
+{
+    background:transparent;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid black;
+    box-shadow:none;
+    color: black;
+    margin-left: 5px;
+    margin-bottom: 4px;
+    width: 15%;
+}
+
+input.sheet-tab1:checked ~ div.sheet-tab1,
+input.sheet-tab2:checked ~ div.sheet-tab2,
+input.sheet-tab3:checked ~ div.sheet-tab3
+{
+    display: block;
+}
+
+input.sheet-tab
+{
+    width: 150px;
+    height: 40px;
+    left: 6px;
+    margin: 0px -1.5px;
+    cursor: pointer;
+    z-index: 1;
+    border: 5px solid #A52A2A;
+}
+
+input.sheet-tab::before
+{
+    content: attr(title);
+    text-align: center;
+    display: inline-block;
+
+    background: #fff;
+    color: black;
+    font-family: 'Young Serif', serif;
+
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+
+    border: 2px solid #A52A2A;
+}
+
+input.sheet-tab:checked::before
+{
+    background: black;
+    color: white;
+
+    border: 2px solid #A52A2A;
+}
+
+input.sheet-tab:not(:first-child)::before
+{
+    border-left: none;
+}
+
+div.sheet-tab-content
+{
+    width:830px;
+    margin: 2px 0 0 5px;
+    padding: 5px;
+}
+
+.sheet-textbox {
+    background:transparent;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid black;
+    box-shadow:none;
+    color: black;
+}
+
+.sheet-textbox[type="number"] {
+    text-align:center;
+    background:transparent;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid black;
+    box-shadow:none;
+    width:100%;
+    color: black;
+}
+
+.sheet-textbox-carac[type="text"] {
+    text-align:center;
+    background:transparent;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:none;
+    width:90%;
+    color: black;
+    width:250px;
+    margin-left:7px;
+    text-align:center;
+    font-size:20px;
+}
+
+.sheet-textbox-sante[type="text"] {
+    text-align:center;
+    background:transparent;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:none;
+    width:90%;
+    color: black;
+    width:310px;
+    margin-left:7px;
+    text-align:center;
+    font-size:20px;
+}
+
+.sheet-textbox-langagenatif {
+    text-align:center;
+    background:transparent;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:none;
+    width:92.5%;
+    color: black;
+    margin-left:7px;
+    text-align:center;
+    font-size:20px;
+}
+
+.sheet-textbox-stat[type="number"] {
+    text-align:center;
+    background:transparent;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:none;
+    width:90%;
+    color: black;
+    width:35px;
+    margin-left:7px;
+    text-align:center;
+    font-size:20px;
+}
+
+textarea.sheet-textareabox {
+    text-align:center;
+    background:transparent;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:none;
+    width:90%;
+    height:40px;
+    color: black;
+    margin-left:7px;
+    text-align:center;
+    font-size:20px;
+}
+
+textarea.sheet-textareaboxStat {
+    text-align:center;
+    background:transparent;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:none;
+    width:90%;
+    height:20px;
+    color: black;
+    margin-left:7px;
+    text-align:center;
+    font-size:20px;
+}
+
+select.sheet-select {
+    background:transparent;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:none;
+    color: black;
+}
+
+.sheet-dark_row
+{
+    color:black;
+    background-color:#5E3FC1;
+    font-weight:bolder;
+}
+    
+.sheet-cell
+{
+	display:inline-block;
+	margin-right:1px;
+}
+
+.sheet-style_row
+{
+    position:relative;
+    display:block;
+    margin: 3px;
+}
+
+.sheet-actual_cell
+{
+    font-size:9pt;
+    padding-top:7px;
+    padding-left:7px;
+    font-weight:bolder
+}
+
+.sheet-title
+{
+    text-align: left;
+    font-family: 'Young Serif', serif;
+    background-color: #5E3FC1;
+    color: black;
+    margin-left:15px;
+    font-style:oblique; 
+    width: 90%;
+    font-size: 20pt;
+    font-weight:bolder;
+}
+
+.sheet-subtitle
+{
+    text-align: left;
+    font-family: 'Young Serif', serif;
+    background-color: #5E3FC1;
+    color: black;
+    margin-left:15px;
+    width: 90%;
+    font-size: 15pt;
+    font-weight:bolder;
+}
+
+.sheet-stat
+{
+    width:35px;
+    margin-left:7px;
+    text-align:center;
+    font-size:20px;
+}
+
+.sheet-arme-title
+{
+    display:inline-block;margin-right:1px;
+    font-size:14px;
+}
+
+.sheet-arme
+{
+    display:inline-block;
+    font-size:12px;
+    text-align:left;
+    font-weight:bolder;
+}
+
+.sheet-famDegat {
+    background:transparent;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid black;
+    box-shadow:none;
+    width:100%;
+    color: black;
+    display:inline-block;
+    font-size:12px;
+    text-align:center;
+    font-weight:bolder;
+}
+
+.sheet-comp
+{
+    display:inline-block;
+    font-size:12px;
+    text-align:center;
+    font-weight:lighter;
+    color:white;
+    margin-left:20px;
+    background-color:#5E3FC1;
+    font-style:oblique;
+    border:none;
+}
+
+.sheet-comp-name
+{
+    display:inline-block;
+    font-size:12px;
+    text-align:left;
+    font-weight:lighter;
+    color:white;
+    background-color:#5E3FC1;
+    font-style:oblique;
+    border:none;
+}
+
+.sheet-effet-honneur
+{
+    background:transparent;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: none;
+    box-shadow:none;
+    text-align: center;
+    color: black;
+    width: 100%;
+    font-size:17px;
+}
+
+.sheet-textbox-honneur {
+    text-align:center;
+    background:transparent;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:none;
+    width:60%;
+    color: black;
+    width:275px;
+    margin-left:7px;
+    text-align:center;
+    font-size:20px;
+}
+
+/*Jauge d'affinité divine*/
+.sheet-jauge-affDiv
+{
+    height: 20px;
+    width: 357px;
+    margin-left: 17px;
+    background: linear-gradient(90deg, rgba(250,234,198,1) 0%, rgba(255,198,118,1) 50%, rgba(255,158,1,1) 100%);
+}
+
+input[type="checkbox"].sheet-affDiv-check
+{
+    opacity: 0;
+	width: 13px;
+	height: 13px;
+	position: relative;
+	top: 5px;
+	left: 6px;
+	margin: 1px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+input[type="checkbox"].sheet-affDiv-check + span::before
+{
+    content: "";
+    width: 13px;
+    height: 13px;
+    font-size: 13px;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+input[type="checkbox"].sheet-affDiv-check:checked + span::before
+{
+    content: "▼";
+}
+
+/*Jauge d'honneur*/
+.sheet-jauge-honneur
+{
+    height: 20px;
+    width: 372px;
+    margin-left: 17px;
+    background: linear-gradient(90deg, rgb(0, 0, 255) 0%, rgb(0, 255, 0) 50%, rgb(255, 0, 0) 100%);
+}
+
+input[type="checkbox"].sheet-honneur-check
+{
+    opacity: 0;
+	width: 13px;
+	height: 13px;
+	position: relative;
+	top: 5px;
+	left: 6px;
+	margin: 1px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+input[type="checkbox"].sheet-honneur-check + span::before
+{
+    content: "";
+    width: 13px;
+    height: 13px;
+    font-size: 13px;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+input[type="checkbox"].sheet-honneur-check:checked + span::before
+{
+    content: "▼";
+}
+
+/*Jauge de santé*/
+.sheet-jauge-sante
+{
+    height: 20px;
+    width: 372px;
+    margin-left: 18px;
+    background: linear-gradient(90deg, rgba(1,255,0,1) 0%, rgba(255,128,0,1) 50%, rgba(255,0,0,1) 100%);
+}
+
+input[type="checkbox"].sheet-sante-check
+{
+    opacity: 0;
+	width: 14px;
+	height: 14px;
+	position: relative;
+	top: 5px;
+	left: 6px;
+	margin: 1px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+input[type="checkbox"].sheet-sante-check + span::before
+{
+    content: "";
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+input[type="checkbox"].sheet-sante-check:checked + span::before
+{
+    content: "▼";
+}
+
+/*Macros*/
+/*template enyllion*/
+.sheet-rolltemplate-enyllion table
+{
+    width: 100%;
+    padding: 2px;
+    border: 1px solid;
+    background-color: #5E3FC1;
+    background-repeat:no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+}
+
+.sheet-rolltemplate-enyllion .sheet-subheader
+{
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+.sheet-rolltemplate-enyllion .sheet-diceresult
+{
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+}
+
+.sheet-rolltemplate-enyllion .sheet-tcat
+{
+    font-family: 'Courier New';
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sheet-rolltemplate-enyllion th
+{
+	color: rgb(126, 45, 64);
+	padding-left: 5px;
+	font-size: 1.5em;
+	text-align: left;
+	font-family: 'Courier New';
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-enyllion td
+{
+	padding-left: 5px;
+	font-size: 14px;
+}
+
+.sheet-rolltemplate-enyllion .sheet-name
+{
+	text-align: left;
+	font-family: 'Courrier New';
+	color: black;
+	margin-left:15px;
+	width: 90%;
+	font-size: 15pt;
+	font-weight: bolder;
+}
+
+.sheet-rolltemplate-enyllion .sheet-famname
+{
+	text-align: left;
+	font-family: 'Courrier New';
+	color: black;
+	margin-left:12px;
+	width: 90%;
+	font-size: 15pt;
+	font-style: italic;
+}
+
+/*template sort-invocation*/
+
+.sheet-rolltemplate-invocation table
+{
+    width: 100%;
+    padding: 2px;
+    border: 1px solid;
+    background-color: #5E3FC1;
+    background-repeat:no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+}
+
+.sheet-rolltemplate-invocation .sheet-subheader
+{
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+.sheet-rolltemplate-invocation th
+{
+	color: rgb(126, 45, 64);
+	padding-left: 5px;
+	font-size: 1.5em;
+	text-align: left;
+	font-family: 'Courier New';
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-invocation td
+{
+	padding-left: 5px;
+	font-size: 14px;
+}
+
+.sheet-rolltemplate-invocation .sheet-name
+{
+	text-align: left;
+	font-family: 'Courrier New';
+	color: black;
+	margin-left:15px;
+	width: 90%;
+	font-size: 15pt;
+	font-weight: bolder;
+}
+
+.sheet-rolltemplate-invocation .sheet-famname
+{
+	text-align: left;
+	font-family: 'Courrier New';
+	color: black;
+	margin-left:12px;
+	width: 90%;
+	font-size: 15pt;
+	font-style: italic;
+}
+
+/*template degats*/
+
+.sheet-rolltemplate-degats table
+{
+    width: 100%;
+    padding: 2px;
+    border: 1px solid;
+    background-color: #5E3FC1;
+    background-repeat:no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+}
+
+.sheet-rolltemplate-degats .sheet-subheader
+{
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+.sheet-rolltemplate-degats .sheet-tcat
+{
+    font-family: 'Courier New';
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sheet-rolltemplate-degats .sheet-diceresult
+{
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+}
+
+.sheet-rolltemplate-degats th
+{
+	color: rgb(126, 45, 64);
+	padding-left: 5px;
+	font-size: 1.5em;
+	text-align: left;
+	font-family: 'Courier New';
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-degats td
+{
+	padding-left: 5px;
+	font-size: 14px;
+}
+
+.sheet-rolltemplate-degats .sheet-name
+{
+	text-align: left;
+	font-family: 'Courrier New';
+	color: black;
+	margin-left:15px;
+	width: 90%;
+	font-size: 15pt;
+	font-weight: bolder;
+}
+
+.sheet-rolltemplate-degats .sheet-famname
+{
+	text-align: left;
+	font-family: 'Courrier New';
+	color: black;
+	margin-left:12px;
+	width: 90%;
+	font-size: 15pt;
+	font-style: italic;
+}
+
+/*Template macro*/
+
+.sheet-rolltemplate-macro table
+{
+    width: 100%;
+    padding: 2px;
+    border: 1px solid;
+    background-color: #5E3FC1;
+    background-repeat:no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+}
+
+.sheet-rolltemplate-macro .sheet-subheader
+{
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+.sheet-rolltemplate-macro .sheet-tcat
+{
+    font-family: 'Courier New';
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sheet-rolltemplate-macro .sheet-diceresult
+{
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+}
+
+.sheet-rolltemplate-macro th
+{
+	color: rgb(126, 45, 64);
+	padding-left: 5px;
+	font-size: 1.5em;
+	text-align: left;
+	font-family: 'Courier New';
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-macro td
+{
+	padding-left: 5px;
+	font-size: 14px;
+}
+
+.sheet-rolltemplate-macro .sheet-name
+{
+	text-align: left;
+	font-family: 'Courrier New';
+	color: black;
+	margin-left:15px;
+	width: 90%;
+	font-size: 15pt;
+	font-weight: bolder;
+}
+
+/*template bestiaire*/
+
+.sheet-rolltemplate-bestiaire table
+{
+    width: 100%;
+    padding: 2px;
+    border: 1px solid;
+    background-color: #5E3FC1;
+    background-repeat:no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+}
+
+.sheet-rolltemplate-bestiaire .sheet-subheader
+{
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+.sheet-rolltemplate-bestiaire th
+{
+	color: rgb(158, 11, 11);
+	padding-left: 5px;
+	font-size: 1.5em;
+	text-align: left;
+	font-family: 'Courier New';
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-bestiaire td
+{
+	padding-left: 5px;
+	font-size: 14px;
+}
+
+.sheet-rolltemplate-bestiaire .sheet-name
+{
+	text-align: left;
+	font-family: 'Courrier New';
+	color: black;
+	margin-left:15px;
+	width: 90%;
+	font-size: 15pt;
+	font-weight: bolder;
+}
+
+.sheet-rolltemplate-bestiaire .sheet-tcat
+{
+    font-family: 'Courier New';
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+
+/*Sections extensibles*/
+.sheet-expand-control[value="0"] ~ .sheet-expanded-view,
+.sheet-expand-control:not([value="0"]) ~ .sheet-collapsed-view{
+    display:none;
+}
+.sheet-expandable-section:not(:hover) > .sheet-expand-button{
+    opacity:0;
+}
+.sheet-expand-control:not([value="0"]) ~ .sheet-expanded-view{
+    margin-bottom:0.5em;
+}
+.sheet-expandable-section > .sheet-expand-button{
+    display:grid;
+    grid-template-columns:auto;
+    grid-template-rows:auto;
+    grid-template-areas:"button";
+    place-items:center;
+    width:auto;
+    height:auto;
+}
+.sheet-expand-button > span{
+    font-family:pictos;
+}
+.sheet-expandable-section > .sheet-expand-button > input[type=checkbox]{
+    opacity:0;
+    z-index:10;
+    width:100%;
+    height:100%;
+    grid-area:button;
+}
+.sheet-expandable-section > :not(.sheet-expand-button){
+    grid-column:1 / -1;
+}
+.sheet-collapsed-view{
+    display:grid;
+    margin-bottom:0.5em;
+    clip-path:var(--spanPolygon);
+    min-height:15px;
+}
+.sheet-expandable-section > .sheet-expand-button > .sheet-expand-state{
+    grid-area:button;
+}
+.sheet-expand-button > input:checked ~ .sheet-expand-state{
+    transform:rotate(90deg);
+}

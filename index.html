@@ -1,0 +1,1294 @@
+<div class="sheet-tab1" style="background-color: #5E3FC1">
+	<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="principal"  />
+	<div>
+		<button type="action" class="onglets-sheet" name="act_principal">Principal</button>
+		<button type="action" class="onglets-sheet" name="act_equipement">Equipement</button>
+		<button type="action" class="onglets-sheet" name="act_grimoire">Grimoire et familiers</button>
+		<button type="action" class="onglets-sheet" name="act_overlord">Overlord</button>
+	</div>
+	
+
+	<!--Début feuille principale-->
+	<div class="sheet-principal" style="background-color: #5E3FC1">
+		<!--Début Infos Personnage!-->
+		<div class="title" style="font-effect:engrave; margin-top: 25px;">Personnage</div><br>
+			<div class="perso-char">
+				Nom :<input class="perso-char-textbox" type="text" name="attr_Name" style="margin-right: 8px;"/>
+				Race :<input class="perso-char-textbox" type="text" name="attr_Race" style="margin-right: 8px;"/>
+				Classe :<input class="perso-char-textbox" type="text" name="attr_Classe" style="margin-right: 8px;"/><br>
+				Sous-classe :<input class="perso-char-textbox" type="text" name="attr_SousClasse" style="margin-right: 8px;"/>
+				Âge :<input class="perso-char-textbox" type="text" name="attr_Age" style="margin-right: 8px;"/>
+				Niveau :<input class="perso-char-textbox" type="text" name="attr_PlayerLvl" style="margin-right: 8px;"/>				
+			</div>
+		<br>
+		<!--Fin Infos Personnage-->
+		<hr align="center" width="90%">
+		<div class='sheet-2colrow'>
+			<!--Début Colonne Gauche-->
+			<div class="sheet-col">
+				<!--Début Caractéristiques-->
+				<div>
+					<div class="title" style="font-effect:engrave">Caractéristiques</div><br>
+					<div class="dark_row" style="font-size:20px;line-height:25px;">
+						<div class="cell" style="margin-left: 203px;">CON</div>
+						<br>
+						<div class="cell" style="margin-left: 30px; margin-top:10px;">FO</div>
+						<div class="cell" style="margin-left: 40px;">DEX</div>
+						<div class="cell" style="margin-left: 29px;">Phy</div>
+						<div class="cell" style="margin-left: 8px;">Mag</div>
+						<div class="cell" style="margin-left: 30px;">PE</div>
+						<br>
+						<input class="textbox-stat" type="number" value="0" name="attr_FO"/>
+						<input class="textbox-stat" type="number" value="0" name="attr_DEX"/>
+						<input class="textbox-stat" type="number" value="0" name="attr_CON-phy" style="margin-right: 0px; width: 50px;"/>
+						<input class="textbox-stat" type="number" value="0" name="attr_CON-mag" style="margin-left: 0px; width: 50px;"/>
+						<input class="textbox-stat" type="number" value="0" name="attr_PE"/>
+						<br>
+						<button type="roll" style="margin-left:30px;" title="Force" name="roll_FO" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Force}} {{Carac=[[@{FO}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<button type="roll" style="margin-left:40px;" title="Dexterité" name="roll_DEX" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Dexterité}} {{Carac=[[@{DEX}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<button type="roll" style="margin-left:32px;" title="Constitution" name="roll_CON-phy" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Constitution Physique}} {{Carac=[[@{CON-phy}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<button type="roll" style="margin-left:18px;" title="Constitution" name="roll_CON-mag" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Constitution Magique}} {{Carac=[[@{CON-mag}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<button type="roll" style="margin-left:30px;" title="Perception" name="roll_PE" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Perception}} {{Carac=[[@{PE}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<br>
+						<div class="cell" style="margin-left: 30px;">ED</div>
+						<div class="cell" style="margin-left: 45px;">CH</div>
+						<div class="cell" style="margin-left: 50px;">PO</div>
+						<div class="cell" style="margin-left: 45px;">SF</div>
+						<br>
+						<input class="textbox-stat" type="number" value="0" name="attr_ED"/>
+						<input class="textbox-stat" type="number" value="0" name="attr_CH"/>
+						<input class="textbox-stat" type="number" value="0" name="attr_PO"/>
+						<input class="textbox-stat" type="number" value="0" name="attr_SF"/>
+						<br>
+						<button type="roll" style="margin-left:30px;"title="Education" name="roll_ED" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Education}} {{Carac=[[@{ED}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<button type="roll" style="margin-left:40px;"title="Charisme" name="roll_CH" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Charisme}} {{Carac=[[@{CH}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<button type="roll" style="margin-left:45px;"title="Pouvoir/Chance" name="roll_PO" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Pouvoir/Chance}} {{Carac=[[@{PO}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<button type="roll" style="margin-left:40px;"title="Sang-Froid" name="roll_SF" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=Sang-Froid}} {{Carac=[[@{SF}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+						<br>
+					</div><br>
+				</div>
+				<!--Fin Caractéristiques-->
+				<hr align="center" width="90%">
+                <!--Début Caractéristiques de race-->
+				<div class="title" style="font-effect:engrave">Caractéristiques de race</div><br>
+				<div class="sheet-wrapper1">
+					<div class="char">
+						<span style="margin-left: 90px;">Caractéristique</span>
+						<span style="margin-left: 66px;">Bonus/Malus</span>
+					</div><br>
+					<div class="char">
+                        <input class="textbox-carac" type="text" name="attr_CaracRace1" value="" readonly="readonly" style="margin-bottom: 4px;"/>
+                        <input class="textbox-stat" type="number" name="attr_BonMalCarac1" readonly="readonly" style="margin-bottom: 4px;"/>
+					</div><br>
+					<div class="char">
+                        <input class="textbox-carac" type="text" name="attr_CaracRace2" value="" readonly="readonly"/>
+                        <input class="textbox-stat" type="number" name="attr_BonMalCarac2" readonly="readonly"/>
+					</div>
+				</div><br>
+                <div class="title" style="font-effect:engrave" >Résistance Magique</div><br>
+                <div class="sheet-wrapper1">
+					<div class="char">
+                        <div class="char"><span style="margin-left: 15px;">Résistance : </span><input class="textbox-carac" type="text" name="attr_ResistanceElem" value="" style="margin-left:13px; margin-bottom: 4px;" readonly="readonly"/></div>
+					</div>
+                    <div class="char">
+                        <div class="char"><span style="margin-left: 15px;">Faiblesse : </span><input class="textbox-carac" type="text" name="attr_FaiblesseElem" value="" style="margin-left:24px;" readonly="readonly"/></div><br>
+					</div>
+				</div>
+                <!--Fin Caractéristiques de race-->
+				<hr align="center" width="90%">
+				<!--Début Bourse -->
+				<div  style="margin-top:20px;">
+					<div class="title" style="font-effect:engrave" >Bourse</div><br>
+					<div class="sheet-wrapper1">
+						<div class="char">Pièces d'Or :<input class="textbox-stat" type="number" name="attr_PiO" style="text-align:center; margin-left:40px;"/></div>
+					</div><br>
+					<div class="sheet-wrapper1">
+						<div class="char">Pièces de Platine :<input class="textbox-stat" type="number" name="attr_PiA" style="text-align:center; margin-left:6px;"/></div>
+					</div><br>
+				</div>
+				<!-- Fin Bourse-->
+				<hr align="center" width="90%">
+				<!-- Affinité divine-->
+				<div  style="margin-top:20px;">
+					<div class="title" style="font-effect:engrave" >Affinité divine</div><br>
+					<input class="textbox-stat" type="number" name="attr_AffDiv" style="margin-left:165px;" min="0" max="10"/>
+				</div>
+				<div class="char">
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="1"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="2" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="3" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="4" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="5" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="6" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="7" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="8" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="9" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="10" style="margin-left:17px;"/><span></span>
+					<input class="sheet-affDiv-check" type="checkbox" name="attr_affinDiv" value="11" style="margin-left:17px;"/><span></span>
+				</div>
+				<div class="jauge-affDiv"></div>
+				<!-- Fin Affinité divine-->
+			</div>
+			<!--Fin Colonne Gauche-->
+
+			<!--Début Colonne Droite-->
+			<div class="sheet-col">
+				<div class="title" style="font-effect:engrave" >Infos Partie</div><br>
+				<div class="sheet-wrapper1">
+					<div class="char">Nom Joueur :<input class="textbox" type="text" name="attr_PlayerName" style="margin-left: 6px;"/></div><br>
+					<div class="char">Maitre de jeu :<input class="textbox" type="text" name="attr_GmName" style="margin-left: 2px;"/></div>
+					<div class="char">Campagne :<input class="textbox" type="text" name="attr_CampaignName" style="margin-left: 14px;"/></div>
+					
+				</div><br>
+				<hr align="center" width="90%">
+				<div class="title" style="font-effect:engrave">Santé</div>
+				<div class="sheet-wrapper1">
+					<div class="char">
+						<div class="subtitle"><span style="margin-left: 115px;">Points de vie</span></div>
+						<div class="char">
+							<span style="margin-left: 112px;">Actuels</span>
+							<span style="margin-left: 65px;">Total</span>
+						</div>
+						<div class="char">
+							<input class="textbox-stat" type="number" name="attr_PdvActuel" style="text-align:center; margin-left:100px;"/>
+							<input class="textbox-stat" type="number" name="attr_PdvTotal" style="text-align:center; margin-left:38px;"/>
+						</div><br>
+					</div><br><br>
+					<div class="subtitle"><span style="margin-left: 150px;">Statut</span></div>
+					<div class="char">
+						<span style="margin-left:120px;">Léger</span>
+						<span style="margin-left: 25px;">Sérieux</span>
+						<span style="margin-left: 25px;">Critique</span>
+						<span style="margin-left: 20px;">Mortel</span>
+					</div><br>
+					<div class="char">
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="1"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="2"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="3"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="4"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="5"/><span></span>
+
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="6" style="margin-left: 4px;"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="7"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="8"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="9"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="10"/><span></span>
+
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="11" style="margin-left: 4px;"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="12"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="13"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="14"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="15"/><span></span>
+
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="16" style="margin-left: 4px;"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="17"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="18"/><span></span>
+						<input class="sheet-sante-check" type="checkbox" name="attr_Sante" value="19"/><span></span>
+					</div>
+					<div class="jauge-sante"></div>
+					<div class="char">
+						<span class="subtitle" style="margin-left: 20px;">Effet :</span>
+						<input class="textbox-sante" type="text" name="attr_EffetSante" value="" style="margin-left:10px; margin-bottom: 4px;" readonly="readonly"/>
+						<input type="hidden" name="attr_MalusSante" value=""/>
+						<input type="hidden" name="attr_ValSante" value=""/>
+					</div>
+				</div><br>
+				<hr align="center" width="90%">
+				<div class="title" style="font-effect:engrave">Karma</div>
+				<div class="sheet-wrapper1">
+					<div class="char">
+						<input class="textbox-stat" type="number" name="attr_Honneur" style="margin-left: 160px;" min="-100" max="100" step="10"/>
+					</div><br>
+					<div class="char">
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="0"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="1"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="2"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="3"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="4"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="5"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="6"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="7"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="8"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="9"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="10"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="11"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="12"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="13"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="14"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="15"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="16"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="17"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="18"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="19"/><span></span>
+						<input class="sheet-honneur-check" type="checkbox" name="attr_HonEch" value="20"/><span></span> 
+					</div>
+					<div class="jauge-honneur"></div>
+					<div class="char">
+						<span class="subtitle" style="margin-left: 20px;">Alignement :</span>
+						<input class="textbox-honneur" type="text" name="attr_Alignement" value="" style="margin-left:15px; margin-bottom: 4px; width:80%;" readonly="readonly"/>
+					</div>
+				</div><br>
+				<hr align="center" width="90%">
+				<div class="title" style="font-effect:engrave">Attributs</div>
+				<div class="sheet-wrapper1">
+					<div class="char"><div class="subtitle"><span>Traits de caractères</span></div><textarea class="textareabox" type="text" name="attr_TraitsCarc"></textarea></div>
+					<div class="char"><div class="subtitle"><span>Langage natif</span></div><input class="textbox-langagenatif" type="text" name="attr_LanguageNatif" style="margin-bottom: 12px;"></div>
+					<div class="char"><div class="subtitle"><span>Langages parlés</span></div><textarea class="textareabox" type="text" name="attr_Language"></textarea></div>
+				</div>
+			</div>
+			<!--Fin Colonne Droite-->
+		</div>
+		<hr align="center" width="90%">
+		<!--Début arbre martial/magique-->
+		<div class="title" style="font-effect:engrave">Arbre Martial ou Magique</div>
+		<div class="sheet-2colrow">
+			<div class="sheet-col">
+				<div class="dark_row" style="text-align: center;">
+					<div  class="arme-title" style="font-size:20px;margin-top: 10px;">Arbre Principal</div>
+					<input class="textbox" type="text" name="attr_ArbrePrincName" style="width:205px;"/>
+					<fieldset class="repeating_arbrePrincipal">
+						<div class="dark_row" style="font-size:20px;line-height:25px;">
+							<div  class="arme-title" style="margin-left:20px;">Nom</div>
+							<div class="arme-title" style="margin-left:40px;">Bonus</div>
+							<div class="arme-title" style="margin-left:70px; margin-right: 40px;">Description</div>
+						</div>
+						<div class="dark_row">
+							<input class="textbox" type="text" name="attr_ArbrePrincCompName" style="width:100px;"/>
+							<input class="textbox-stat" type="number" name="attr_ArbrePrincBonus" style="width:60px;text-align:center"/>
+							<textarea class="textareabox" type="text" name="attr_ArbrePrincDesc" style="vertical-align: top; width:200px"></textarea>
+						</div>
+						<hr align="center" width="60%">
+					</fieldset>
+				</div>
+			</div>
+			<div class="sheet-col">
+				<div class="dark_row" style="text-align: center;">
+					<div  class="arme-title" style="font-size:20px;margin-top: 10px;">Arbre Secondaire</div>
+					<input class="textbox" type="text" name="attr_ArbreSecName" style="width:205px;"/>
+					<fieldset class="repeating_arbreSecondaire">
+						<div class="dark_row" style="font-size:20px;line-height:25px;">
+							<div  class="arme-title" style="margin-left:15px;">Nom</div>
+							<div class="arme-title" style="margin-left:40px;">Bonus</div>
+							<div class="arme-title" style="margin-left:70px; margin-right: 40px;">Description</div>
+						</div>
+						<div class="dark_row">
+							<input class="textbox" type="text" name="attr_ArbreSecCompName" style="width:100px;"/>
+							<input class="textbox-stat" type="number" name="attr_ArbreSecBonus" style="width:60px;text-align:center"/>
+							<textarea class="textareabox" type="text" name="attr_ArbreSecDesc" style="vertical-align: top; width:200px"></textarea>
+						</div>
+						<hr align="center" width="60%">
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<!--Fin arbre martial/magique-->
+		<hr align="center" width="90%">
+		<!--Début Compétences-->
+		<div style="margin-left:5px; margin-top:40px">
+			<div class="title" style="font-effect:engrave">Compétences</div>
+			<div class="dark_row" style="font-size:20px;line-height:25px;">
+				<div  class="arme-title" style="margin-left:110px; margin-top:10px;">Compétence</div>
+				<div  class="arme-title" style="margin-left:90px; margin-top:10px;">Caractéristique</div>
+				<div  class="arme-title" style="margin-left:10px;">Bonus/Malus</div>
+				<div  class="arme-title" style="margin-left:10px;">Description</div>
+			</div>
+			<fieldset class="repeating_comp">
+				<div class="dark_row">
+					<button type="roll" style="margin-left:0px;"title="Competence" name="roll_Comp" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=@{CompName&#125; }} {{Carac=[[@{CaracName}+@{CompBonusMalus}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}} {{description=@{CompDescription&#125; }}"></button>
+					<input class="textbox" type="text" name="attr_CompName" style="width:250px;margin-left:0px;"/>
+					<select class="select" name="attr_CaracName" style="width:120px;margin-left:0px;">
+						<option value="0">-Choisir-</option>
+						<option value="@{FO}">Force</option>
+						<option value="@{DEX}">Dextérité</option>
+						<option value="@{CON}">Constitution</option>
+						<option value="@{PE}">Perception</option>
+						<option value="@{ED}">Education</option>
+						<option value="@{CH}">Charisme</option>
+						<option value="@{PO}">Pouvoir</option>
+						<option value="@{SF}">Sang-Froid</option>
+					</select>
+					<input class="textbox" type="number" name="attr_CompBonusMalus" value="0" style="width:90px;text-align:center;"/>
+					<textarea class="textareabox" type="text" name="attr_CompDescription" style="vertical-align: top; width: 300px;"></textarea>
+				</div>
+			</fieldset>
+		</div>
+		<!--Fin Compétences-->
+		<hr align="center" width="90%">
+		<!--Début Poids porté-->
+		<div class="title" style="font-effect:engrave">Charge</div>
+		<div class='sheet-3colrow'>
+			<div class="sheet-col">
+				<div class="sheet-wrapper1">
+					<div class="dark_row" style="font-size:20px;line-height:25px;"><div class="arme-title" style="margin-left:70px; margin-top:10px;">Total</div></div><br>
+					<div class="char">Tranportable : <input class="textbox-stat" type="number" name="attr_PdsTrans" value="(@{FO}*35)" disabled="true"/></div><br><br>
+					<div class="char">Transporté : <input class="textbox-stat" type="number" name="attr_PdsPorteTot" style="margin-left:20px;" readonly="readonly"/></div><br><br>
+				</div><br>
+			</div>
+		
+			<div class="sheet-col">
+				<div class="sheet-wrapper1">
+					<div class="dark_row" style="font-size:20px;line-height:25px;"><div class="arme-title" style="margin-left:70px; margin-top:10px;">Armes</div></div><br>
+					<div class="char">Corps à Corps : <input class="textbox-stat" type="number" name="attr_PdsPorteWeap" readonly="readonly"/></div><br><br>
+					<div class="char">Distance : <input class="textbox-stat" type="number" name="attr_PdsPorteRangWeap" style="margin-left:43px;" readonly="readonly"/></div><br><br>
+					<div class="char">Munitions : <input class="textbox-stat" type="number" name="attr_PdsPorteMun" style="margin-left:32px;" readonly="readonly"/></div><br><br>
+				</div><br>
+			</div>
+			<div class="sheet-col">
+				<div class="sheet-wrapper1">
+					<div class="dark_row" style="font-size:20px;line-height:25px;"><div class="arme-title" style="margin-left:60px; margin-top:10px;">Autres</div></div><br>
+					<div class="char">Equipement : <input class="textbox-stat" type="number" name="attr_PdsPorteEqp" readonly="readonly"/></div><br><br>
+					<div class="char">Armure : <input class="textbox-stat" type="number" name="attr_PdsPorteArmor" style="margin-left:34px;" readonly="readonly"/></div><br>
+				</div>
+			</div>
+		</div>
+		<!--Fin poids porté-->
+	</div>
+	<!--Fin feuille principale-->
+
+	<!--Debut feuille equipement-->
+	<div class="sheet-equipement" style="background-color:#5E3FC1">
+		<!--Début Armes/Armures-->
+		<br>
+		<div style="margin-left:5px; margin-top:20px">
+			<div class="title" style="font-effect:engrave" >Armes</div>
+			<div class="dark_row" style="text-align: center;">
+				<div  class="arme-title" style="font-size:20px;margin-top: 10px;">Armes de Mêlée</div>
+			</div>
+			<fieldset class="repeating_weapons">
+				<div class="dark_row" style="font-size:20px;line-height:25px;">
+					<div  class="arme-title" style="margin-left:80px; margin-top:10px;">Nom</div>
+					<div  class="arme-title" style="margin-left:82px;">Dégâts base</div>
+					<div  class="arme-title" style="margin-left:32px;">Poids</div>
+					<div  class="arme-title" style="margin-left:37px;">Prix</div>
+					<div  class="arme-title" style="margin-left:32px;">Porté</div>
+				</div>
+				<div class="dark_row">
+					<button  type="roll" style="margin-left:0px;line-height:10px;height:20px;margin-bottom:2px;" name="roll_Melee" value="&{template:degats} {{perso=@{Name} }} {{name=@{ArmeNom} }} {{RollDegats=[[@{ArmeDeg}d@{ArmeDegModif}]] }}"></button>
+					<input class="textbox" type="text" name="attr_ArmeNom" style="width:150px;margin-left: 0px;"/>
+					<input class="textbox-stat" type="number" name="attr_ArmeDeg" style="width:40px;text-align:center;"> d</input>
+					<input class="textbox-stat" type="number" name="attr_ArmeDegModif" style="width:40px;text-align:center;"/>
+					<input class="textbox-stat" type="number" name="attr_ArmePds" style="width:70px;"/>
+					<input class="textbox" type="text" name="attr_ArmePrix" style="width:80px;"/>
+					<input type="checkbox" name="attr_WearWeap" style="margin-left:20px;" value="1" checked />
+					<input type="hidden" name="attr_expressionRollEqp" value=""/>
+				</div>
+				<div class="dark_row">
+					<div class="arme-title" style="margin-left:85px;">Effet</div>
+					<div class="arme-title" style="margin-left:92px;">Pourcentage</div>
+					<div class="arme-title" style="margin-left:5px;">Nb tours max</div>
+					<div class="arme-title" style="margin-left:10px;">Mod dégats</div>
+				</div>
+				<div class="dark_row">
+					<input class="textbox" type="text" name="attr_Effet" style="width: 200px;margin-left: 0px;"/>
+					<input class="textbox-stat" type="number" name="attr_Pourcentage" style="width:80px;"/>
+					<input class="textbox-stat" type="number" name="attr_NbTour" style="width:80px;margin-left: 15px;"/>
+					<input class="textbox-stat" type="number" name="attr_ModDegEffet" style="width:80px;margin-left: 15px;"/>
+					<input type="hidden" name="attr_EffetName" value=""/>
+				</div>
+				<hr align="center" width="30%">
+			</fieldset>
+			<hr align="center" width="60%">
+			<div class="dark_row" style="text-align: center;">
+				<div  class="arme-title" style="font-size:20px;margin-top: 10px;">Armes à Distance</div>
+			</div>
+			<fieldset class="repeating_rangedweapons">
+				<div class="dark_row" style="font-size:20px;line-height:25px;">
+					<div  class="arme-title" style="margin-left:80px; margin-top:10px;">Nom</div>
+					<div  class="arme-title" style="margin-left:82px;">Dégâts base</div>
+					<div  class="arme-title" style="margin-left:25px;">Portée</div>
+					<div  class="arme-title" style="margin-left:25px;">Poids</div>
+					<div  class="arme-title" style="margin-left:40px;">Prix</div>
+					<div  class="arme-title" style="margin-left:32px;">Porté</div>
+				</div>
+				<div class="dark_row">
+					<button  type="roll" style="margin-left:0px;line-height:10px;height:20px;margin-bottom:2px;" name="roll_Distance" value="&{template:degats} {{perso=@{Name} }} {{name=@{RangedWeaponName} }} {{RollDegats=[[@{RangedWeaponDmg}d@{RangedWeaponDmgModif}]] }}"></button>
+					<input class="textbox" type="text" name="attr_RangedWeaponName" style="width: 150px;margin-left: 0px;"/>
+					<input class="textbox-stat" type="number" name="attr_RangedWeaponDmg" style="width: 40px;text-align: center;"> d</input>
+					<input class="textbox-stat" type="number" name="attr_RangedWeaponDmgModif" style="width:40px;text-align:center;">
+					<input class="textbox-stat" type="number" name="attr_RangedWeaponPortee" style="width:60px;text-align:center;" />
+					<input class="textbox-stat" type="number" name="attr_RangedWeaponPds" style="width:70px;"/>
+					<input class="textbox" type="text" name="attr_RangedWeaponPrix" style="width:80px;"/>
+					<input type="checkbox" name="attr_WearRgdWeap" style="margin-left:20px;" value="1" checked />
+					<input type="hidden" name="attr_expressionRollEqp" value=""/>
+				</div><br>
+				<div class="dark_row">
+					<div class="arme-title" style="margin-left:85px;">Effet</div>
+					<div class="arme-title" style="margin-left:92px;">Pourcentage</div>
+					<div class="arme-title" style="margin-left:5px;">Nb tours max</div>
+					<div class="arme-title" style="margin-left:10px;">Mod dégats</div>
+				</div>
+				<div class="dark_row">
+					<input class="textbox" type="text" name="attr_Effet" style="width: 200px;margin-left: 0px;"/>
+					<input class="textbox-stat" type="number" name="attr_Pourcentage" style="width:80px;"/>
+					<input class="textbox-stat" type="number" name="attr_NbTour" style="width:80px;margin-left: 15px;"/>
+					<input class="textbox-stat" type="number" name="attr_ModDegEffet" style="width:80px;margin-left: 15px;"/>
+					<input type="hidden" name="attr_EffetName" value=""/>
+				</div>
+				<hr align="center" width="30%">
+			</fieldset>
+			<hr align="center" width="60%">
+			<div class="dark_row" style="text-align: center;">
+				<div  class="arme-title" style="font-size:20px;margin-top: 10px;">Munitions</div>
+			</div>
+			<fieldset class="repeating_munitions">
+				<div class="dark_row" style="font-size:20px;line-height:25px;">
+					<div  class="arme-title" style="margin-left:80px; margin-top:10px;">Nom</div>
+					<div  class="arme-title" style="margin-left:82px;">Dégâts base</div>
+					<div  class="arme-title" style="margin-left:30px;">Qté</div>
+					<div  class="arme-title" style="margin-left:40px;">Poids</div>
+					<div  class="arme-title" style="margin-left:35px;">Prix</div>
+					<div  class="arme-title" style="margin-left:35px;">Porté</div>
+				</div>
+				<div class="dark_row">
+					<button  type="roll" style="margin-left:0px;line-height:10px;height:20px;margin-bottom:2px;" name="roll_Distance" value="&{template:degats} {{perso=@{Name} }} {{name=@{MunitionName} }} {{RollDegats=[[@{MunitionDmg}d@{MunitionModif}]] }}"></button>
+					<input class="textbox" type="text" name="attr_MunitionName" style="width: 150px;margin-left: 0px;"/>
+					<input class="textbox-stat" type="number" name="attr_MunitionDmg" style="width: 40px;text-align: center;"> d</input>
+					<input class="textbox-stat" type="number" name="attr_MunitionModif" style="width:40px;text-align:center;">
+					<input class="textbox-stat" type="number" name="attr_MunitionQte" style="width:60px;text-align:center;"/>
+					<input class="textbox-stat" type="number" name="attr_MunitionPds" style="width:70px;text-align:center;"/>
+					<input class="textbox" type="text" name="attr_MunitionPrix" style="width:80px;"/>
+					<input type="checkbox" name="attr_WearMunition" style="margin-left:20px;" value="1" checked />
+					<input type="hidden" name="attr_expressionRollEqp" value=""/>
+				</div><br>
+				<div class="dark_row">
+					<div class="arme-title" style="margin-left:85px;">Effet</div>
+					<div class="arme-title" style="margin-left:92px;">Pourcentage</div>
+					<div class="arme-title" style="margin-left:5px;">Nb tours max</div>
+					<div class="arme-title" style="margin-left:10px;">Mod dégats</div>
+				</div>
+				<div class="dark_row">
+					<input class="textbox" type="text" name="attr_Effet" style="width: 200px;margin-left: 0px;"/>
+					<input class="textbox-stat" type="number" name="attr_Pourcentage" style="width:80px;"/>
+					<input class="textbox-stat" type="number" name="attr_NbTour" style="width:80px;margin-left: 15px;"/>
+					<input class="textbox-stat" type="number" name="attr_ModDegEffet" style="width:80px;margin-left: 15px;"/>
+					<input type="hidden" name="attr_EffetName" value=""/>
+				</div>
+				<hr align="center" width="30%">
+			</fieldset>
+		</div>
+		<hr align="center" width="90%">
+		<div class="dark_row" style="margin-left:5px;">
+			<div class="title" style="font-effect:engrave" >Armures</div>
+			<div  class="arme-title" style="margin-left:95px;">Armure</div>
+			<div  class="arme-title" style="margin-left:133px;">PA</div>
+			<div  class="arme-title" style="margin-left:17px;">Parties Couvertes</div>
+			<div  class="arme-title" style="margin-left:25px;">Poids</div>
+			<div  class="arme-title" style="margin-left:45px;">Prix</div>
+			<div  class="arme-title" style="margin-left:35px;">Porté</div>
+		</div>
+		<fieldset class="repeating_armor">
+			<div class="dark_row">
+				<input class="textbox" type="text" name="attr_ArmorName" style="width:250px;margin-left:5px;"/>
+				<input class="textbox-stat" type="number" name="attr_ArmorPts" style="width:60px;text-align:center;"/>
+				<select class="select" name="attr_ArmorCoverPart" style="width:120px;margin-left:0px;">
+					<option value="0">-Choisir-</option>
+					<option value="1">Tête</option>
+					<option value="2">Torse</option>
+					<option value="3">Bras</option>
+					<option value="4">Main</option>
+					<option value="5">Jambes</option>
+					<option value="6">Pieds</option>
+					<option value="7">Corps complet</option>
+				</select>
+				<input class="textbox-stat" type="number" name="attr_ArmorPds" style="width:80px;text-align:center;"/>
+				<input class="textbox" type="text" name="attr_ArmorPrix" style="width:80px;"/>
+				<input type="checkbox" name="attr_WearArmor" style="margin-left:20px;" value="1" checked />
+			</div>
+		</fieldset>
+		<!--Fin Armes/Armures-->
+		<hr align="center" width="90%">
+		<!--Début Équipement-->
+		<div class="dark_row" style="margin-left:5px;">
+			<div class="title" style="font-effect:engrave" >Équipement</div>
+			<div  class="arme-title" style="margin-left:105px;">Objet</div>
+			<div  class="arme-title" style="margin-left:130px;">Qté</div>
+			<div  class="arme-title" style="margin-left:40px;">Poids/u</div>
+			<div  class="arme-title" style="margin-left:72px;">Rune</div>
+			<div  class="arme-title" style="margin-left:76px;">Prix</div>
+			<div  class="arme-title" style="margin-left:40px;">Pds Total</div>
+			<div  class="arme-title" style="margin-left:15px;">Porté</div>
+			<fieldset class="repeating_inventory">
+				<div class="dark_row">
+					<input class="textbox" type="text" name="attr_EqpName" style="width:250px;"/>
+					<input class="textbox-stat" type="number" name="attr_EqpQte" style="width:60px;text-align:center"/>
+					<input class="textbox-stat" type="number" name="attr_EqpPds" style="width:80px;text-align:center"/>
+					<input class="textbox" type="text" name="attr_EqpLoc" style="width:140px;text-align:center"/>
+					<input class="textbox" type="text" name="attr_EqpPrix" style="width:80px;text-align:center"/>
+					<input class="textbox" type="number" name="attr_EqpPdsTot" value="(@{EqpPds}*@{EqpQte})" style="width:80px;text-align:center;" disabled="disabled">
+					<input type="checkbox" name="attr_WearEqp" style="margin-left:20px;" value="1" checked />
+				</div>
+			</fieldset>
+		</div>
+		<!--Fin Équipement-->
+	</div>
+	<!--Fin feuille equipement-->
+
+	<!--Debut feuille grimoire-->
+	<div class="sheet-grimoire" style="background-color:#5E3FC1"><br>
+		<!--Début Grimoire-->
+		<div class="dark_row" style="margin-left:5px; margin-top: 15px;">
+			<div class="title" style="font-effect:engrave" >Grimoire</div>
+			<div  class="arme-title" style="margin-left:85px;">Nom du sort</div>
+			<div  class="arme-title" style="margin-left:80px;">Niveau</div>
+			<div  class="arme-title" style="margin-left:200px;">Description</div>
+			<fieldset class="repeating_grimoire">
+				<div class="dark_row">
+					<button type="roll" style="margin-left:0px;"title="Sort" name="roll_Sort" value="&{template:enyllion} {{perso=@{Name&#125; }} {{name=@{SortName&#125; }} {{Carac=[[@{PO}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}} {{description=@{SortDescription&#125; }}"></button>
+					<input class="textbox" type="text" name="attr_SortName" style="width:205px;"/>
+					<input class="textbox-stat" type="number" name="attr_SortLvl" style="width:50px;text-align:center"/>
+					<textarea class="textareabox" type="text" name="attr_SortDescription" style="vertical-align: top; width:505px"></textarea>
+				</div>
+			</fieldset>
+		</div>
+		<!--Fin Grimoire-->
+		<hr align="center" width="90%">
+		<!--Début Familiers-->
+		<div class="dark_row">
+			<div class="title" style="font-effect:engrave" >Familiers</div>
+			<fieldset class="repeating_fam">
+				<div class="dark_row" style="font-size:20px;line-height:25px;">
+					<div class="arme-title" style="margin-left: 80px; margin-top: 10px;">Nom</div>
+					<div class="arme-title" style="margin-left: 55px;">Type</div>
+					<div class="arme-title" style="margin-left:35px;">FO</div>
+					<div class="arme-title" style="margin-left:18px;">DEX</div>
+					<div class="arme-title" style="margin-left:22px;">PO</div>
+					<div class="arme-title" style="margin-left:18px;">CON</div>
+					<div class="arme-title" style="margin-left:20px;">PE</div>
+					<div class="arme-title" style="margin-left:22px;">CH</div>
+					<div class="arme-title" style="margin-left:85px;">Description</div>
+				</div>
+				<div class="dark_row">
+					<button  type="roll" style="margin-left:5px;" title="InvocFam" name="roll_fam_Invoc" value="&{template:invocation} {{name=Familier}} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{description=@{famDescription&#125; }}"></button>
+					<input class="textbox" type="text" name="attr_famName" style="width:120px;"/>
+					<input class="textbox" type="text" name="attr_famType" style="width: 80px;text-align: center;"/>
+					<input class="textbox" type="number" name="attr_famFO" style="width:50px;text-align:center;"/>
+					<input class="textbox" type="number" name="attr_famDEX" style="width:50px;text-align:center;"/>
+					<input class="textbox" type="number" name="attr_famPO" style="width:50px;text-align:center;"/>
+					<input class="textbox" type="number" name="attr_famCON" style="width:50px;text-align:center;"/>
+					<input class="textbox" type="number" name="attr_famPE" style="width:50px;text-align:center;"/>
+					<input class="textbox" type="number" name="attr_famCH" style="width:50px;text-align:center;"/>
+					<textarea class="textareabox" type="text" name="attr_famDescription" style="vertical-align: top;width:210px"></textarea>
+					<br>
+					<button type="roll" style="margin-left:260px;" title="FamForce" name="roll_fam_FO" value="&{template:enyllion} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=Force}} {{Carac=[[@{FamFO}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+					<button type="roll" style="margin-left:25px;" title="FamDexterité" name="roll_fam_DEX" value="&{template:enyllion} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=Dexterité}} {{Carac=[[@{FamDEX}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+					<button type="roll" style="margin-left:23px;" title="FamPouvoir" name="roll_fam_PO" value="&{template:enyllion} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=Pouvoir}} {{Carac=[[@{FamPO}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+					<button type="roll" style="margin-left:24px;" title="FamConstitution" name="roll_fam_CON" value="&{template:enyllion} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=Constitution}} {{Carac=[[@{FamCON}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+					<button type="roll" style="margin-left:22px;" title="FamPerception" name="roll_fam_PE" value="&{template:enyllion} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=Perception}} {{Carac=[[@{FamPE}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+					<button type="roll" style="margin-left:22px;" title="FamPerception" name="roll_fam_CH" value="&{template:enyllion} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=Charisme}} {{Carac=[[@{FamCH}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}}"></button>
+				</div>
+				<br>
+				<div class="dark_row" style="font-size:20px;line-height:25px;">
+					<div class="arme-title" style="margin-left:105px; margin-top:10px;">Compétence</div>
+					<div class="arme-title" style="margin-left:80px; margin-top:10px;">Caractéristique</div>
+					<div class="arme-title" style="margin-left:2px;">Bonus/Malus</div>
+					<div class="arme-title" style="margin-left:90px;">Description</div>
+					<fieldset class="repeating_famComp">
+						<div class="dark_row">
+							<button type="roll" style="margin-left:0px;"title="Competence Familier" name="roll_famComp" value="&{template:enyllion} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=@{famCompName&#125; }} {{Carac=[[@{famCaracName}+@{famCompBonusMalus}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}} {{description=@{famCompDescription&#125; }}"></button>
+							<input class="textbox" type="text" name="attr_famCompName" style="width:250px;margin-left:0px;"/>
+							<select class="select" name="attr_famCaracName" style="width:120px;margin-left:0px;">
+								<option value="0">-Choisir-</option>
+								<option value="@{famFO}">Force</option>
+								<option value="@{famDEX}">Dextérité</option>
+								<option value="@{famCON}">Constitution</option>
+								<option value="@{famPE}">Perception</option>
+								<option value="@{famPO}">Pouvoir</option>
+								<option value="@{famCH}">Charisme</option>
+							</select>
+							<input class="textbox" type="number" name="attr_famCompBonusMalus" value="0" style="width:90px;text-align:center;"/>
+							<textarea class="textareabox" type="text" name="attr_famCompDescription" style="vertical-align: top; width:290px"></textarea>
+						</div>
+					</fieldset>
+				</div>
+				<br>
+				<div class="dark_row" style="font-size:20px;line-height:25px;">
+					<div class="arme-title" style="margin-left:110px; margin-top:10px;">Attaque</div>
+					<div class="arme-title" style="margin-left:165px;">Dégâts</div>
+					<div class="arme-title" style="margin-left:180px;">Description</div>
+					<fieldset class="repeating_famAttack">
+						<div class="dark_row">
+							<button type="roll" style="margin-left:0px;line-height:10px;height:20px;margin-bottom:2px;" title="Attaque Familier" name="roll_famAttack" value="&{template:degats} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=@{famAttackNom&#125; }} {{RollDegats=[[@{famAttackDeg}d10+@{famAttackDegModif}]]}} {{description=@{famAttackDescription&#125; }}"></button>
+							<input class="textbox" type="text" name="attr_famAttackNom" style="width: 250px;margin-left: 0px;"/>
+							<input class="textbox-stat" type="number" name="attr_famAttackDeg" style="width:40px;text-align:center;">d10+</input>
+							<input class="textbox-stat" type="number" name="attr_famAttackDegModif" style="width:40px;text-align:center;"/>
+							<textarea class="textareabox" type="text" name="attr_famAttackDescription" style="vertical-align: top; width:353px"></textarea>
+						</div>
+					</fieldset>
+				</div>
+				<br>
+				<div class="dark_row" style="margin-left:5px;">
+					<div class="arme-title" style="margin-left:85px;">Nom du sort</div>
+					<div class="arme-title" style="margin-left:65px;">Niveau</div>
+					<div class="arme-title" style="margin-left:210px;">Description</div>
+					<fieldset class="repeating_famGrimoire">
+						<div class="dark_row">
+							<button type="roll" style="margin-left:0px;"title="Sort Familier" name="roll_Sort" value="&{template:enyllion} {{perso=@{Name&#125; }} {{familier=@{famName&#125; }} {{name=@{famSortName&#125; }} {{Carac=[[@{famPO}+?{Modificateur|0}]]}}  {{Roll=[[1D100]]}} {{description=@{famSortDescription&#125; }}"></button>
+							<input class="textbox" type="text" name="attr_famSortName" style="width:205px;"/>
+							<input class="textbox-stat" type="number" name="attr_famSortLvl" style="width:50px;text-align:center"/>
+							<textarea class="textareabox" type="text" name="attr_famSortDescription" style="vertical-align: top; width:505px"></textarea>
+						</div>
+					</fieldset>
+				</div>
+				<hr align="center" width="60%">
+			</fieldset>
+		</div>
+		<!--Fin Familiers-->
+		<hr align="center" width="90%">
+		<!--Debut relations-->
+		<div class="dark_row" style="margin-left:5px; margin-top: 45px;">
+			<div class="title" style="font-effect:engrave">Escouade</div>
+			<div class="arme-title" style="margin-left:62px;">Nom</div>
+			<div class="arme-title" style="margin-left:93px;">Loyauté</div>
+			<div class="arme-title" style="margin-left:60px;">Capacité</div>
+			<div class="arme-title" style="margin-left:210px;">Description</div>
+		</div>
+		<fieldset class="repeating_relation">
+			<div class="dark_row">
+				<input class="textbox" type="text" name="attr_RelationName" style="width:175px;margin-left:5px;"/>
+				<select class="select" name="attr_RelationLoyalty" style="width:80px;margin-left:0px;">
+					<option value="0">-Choisir-</option>
+					<option value="1">Soumis</option>
+					<option value="2">Endoctriné</option>
+					<option value="3">Cultiste</option>
+				</select>
+				<input class="textbox" type="text" name="attr_RelationLoca" style="width:150px;margin-left:5px;"/>
+				<textarea class="textareabox" type="text" name="attr_RelationDescription" style="vertical-align: top; width: 385px;"></textarea>
+			</div>
+		</fieldset>
+        <!--Fin relations-->
+	</div>
+	<!--Fin feuille grimoire-->
+
+	<!--Debut feuille overlord-->
+	<div class="sheet-overlord" style="background-color:#5E3FC1"><br><br>
+		<div class="title" style="font-effect:engrave">Overlord</div>
+		<br>
+		<label style="font-family: 'Young Serif', serif; color: black;">
+			<input type="checkbox" name="attr_OverlordCorps" style="margin-left:240px;"> Corps
+			<input type="checkbox" name="attr_OverlordAme" style="margin-left:80px;"> Âme
+			<input type="checkbox" name="attr_OverlordEsprit" style="margin-left:80px;"> Esprit
+		</label>
+		<br>
+		<fieldset class="repeating_overlord">
+			<div class="dark_row" style="font-size:20px;line-height:25px;">
+				<div  class="arme-title" style="margin-left:40px; margin-top: 10px;">Branche</div>
+				<div  class="arme-title" style="margin-left:60px;">Nom</div>
+				<div  class="arme-title" style="margin-left:95px;">Effet</div>
+				<div class="arme-title" style="margin-left:128px;">Dégâts</div>
+				<div class="arme-title" style="margin-left:140px;">Description</div>
+			</div>
+			<div class="dark_row">
+				<button type="roll" style="margin-left:0px;line-height:10px;height:20px;margin-bottom:2px;" name="roll_Overlord" value="&{template:degats} {{perso=@{Name} }} {{name=@{OverlordName} }} {{RollDegats=[[@{OverlordDegNbDice}d@{OverlordDegTypeDice}+@{OverlordDegMod}]] }}"></button>
+				<select class="select" name="attr_branche" style="width:80px;margin-left:0px;">
+					<option value="0">-Choisir-</option>
+					<option value="1">Corps</option>
+					<option value="2">Âme</option>
+					<option value="3">Esprit</option>
+				</select>
+				<input class="textbox" type="text" name="attr_OverlordName" style="width:130px;text-align:center;"/>
+				<input class="textbox" type="text" name="attr_OverlordEffect" style="width:130px;text-align:center;"/>
+				<input class="textbox-stat" type="number" name="attr_OverlordDegNbDice" style="width:50px;text-align:center;"/> d
+				<input class="textbox-stat" type="number" name="attr_OverlordDegTypeDice" style="width:50px;text-align:center;"/> +
+				<input class="textbox-stat" type="number" name="attr_OverlordDegMod" style="width:50px;text-align:center;"/>
+				<textarea class="textareabox" type="text" name="attr_OverlordDesc" style="vertical-align: top; width:200px;"></textarea>
+			</div>
+			<hr align="center" width="60%">
+		</fieldset>
+	</div> <!--Fin feuille overlord-->
+</div> <!--Fin Feuille de perso PJ-->
+
+<!--template principal-->
+<rolltemplate class="sheet-rolltemplate-enyllion">
+	<table>
+		{{#perso}}
+		{{#familier}}
+			<td class="name"><b>{{perso}}</b></td>
+			<tr><td class="famname"><b>{{familier}}</b></td></tr>
+			<tr><td><hr/></td></tr>
+		{{/familier}}
+		{{/perso}}
+			<tr><th>{{name}}</th></tr>
+			<tr>
+		{{#Roll}}
+			<tr>
+				<td class="tcat">Carac : {{Carac}}</td>
+			</tr>
+			<br>
+			<tr>
+				<td class="tcat">Jet : {{Roll}}</td>
+			</tr>
+			<br>
+			<tr>
+			{{#rollGreater() Roll 95}}
+				<td class="diceresult" style="color:red; font-size: large;">Echec critique !</td>
+			{{/rollGreater() Roll 95}}
+			{{#rollBetween() Roll Carac 95}}
+				<td class="diceresult" style="color:red; font-size: large;">Échec</td>
+			{{/rollBetween() Roll Carac 95}}
+			{{#rollBetween() Roll 21 Carac}}
+				<td class="diceresult" style="color:green; font-size: large;">Réussite</td>
+			{{/rollBetween() Roll 21 Carac}}
+			{{#rollBetween() Roll 11 20}}
+				<td class="diceresult" style="color:green; font-size: large;">Réussite exceptionnelle</td>
+			{{/rollBetween() Roll 11 20}}
+			{{#rollBetween() Roll 6 10}}
+				<td class="diceresult" style="color:green; font-size: large;">Réussite Fabuleuse</td>
+			{{/rollBetween() Roll 6 10}}
+			{{#rollLess() Roll 6}}
+				<td class="diceresult" style="color:green; font-size: large;">Réussite critique</td>
+			{{/rollLess() Roll 6}}
+			</tr>
+		{{/Roll}}
+		</tr>
+		<tr><th>{{description}}</th></tr>
+		<br>
+	</table>
+</rolltemplate>
+
+<!--template dégats-->
+<rolltemplate class="sheet-rolltemplate-degats">
+	<table>
+		{{#perso}}
+			<td class="name"><b>{{perso}}</b></td></tr>
+			<tr><td class="famname"><b>{{familier}}</b></td></tr>
+			<tr><td><hr/></td></tr>
+		{{/perso}}
+			<tr><th>{{name}}</th></tr>
+		{{#RollDegats}}
+			<tr>
+				<td class="tcat">Dégats base : {{RollDegats}}</td>
+			</tr>
+			{{#effet}}
+				<tr>
+					<td class="tcat">Effet : {{effet}}</td>
+				</tr>
+				<tr>
+					<td class="tcat">Chance : {{pourcentage}} %</td>
+				</tr>
+				<tr>
+					<td class="tcat">Jet : {{Roll}}</td>
+				</tr>
+				<br>
+				<tr>
+				{{#rollGreater() Roll pourcentage}}
+					<tr>
+						<td class="diceresult" style="color:red; font-size: large;">Non !</td>
+					</tr>
+				{{/rollGreater() Roll pourcentage}}
+				{{#rollLess() Roll pourcentage}}
+					<td class="diceresult" style="color:green; font-size: large;">Oui</td>
+					{{#RollTour}}
+						<tr>
+							<td class="tcat">Dégats : {{TotalDegats}}</td>
+						</tr>
+						<tr>
+							<td class="tcat">Nombre de tours : {{RollTour}}</td>
+						</tr>
+					{{/RollTour}}
+				{{/rollLess() Roll pourcentage}}
+				</tr>
+			{{/effet}}
+		{{/RollDegats}}
+	</table>
+</rolltemplate>
+
+<!--template invocation-->
+<rolltemplate class="sheet-rolltemplate-invocation">
+	<table>
+		<tr><th>{{name}}</th></tr>
+		{{#perso}}
+		<td class="name"><b>{{perso}}</b></td></tr>
+		<tr><td class="famname"><b>{{familier}}</b></td></tr>
+		<tr><td><hr/></td></tr>
+		{{/perso}}
+		<tr><th>{{description}}</th></tr>
+		<br>
+	</table>
+</rolltemplate>
+
+<!--template macro-->
+<rolltemplate class="sheet-rolltemplate-macro">
+	<table>
+		{{#perso}}
+		<td class="name"><b>{{perso}}</b></td></tr>
+		<tr><td class="famname"><b>{{familier}}</b></td></tr>
+		<tr><td><hr/></td></tr>
+		{{/perso}}
+		<tr><th>{{name}}</th></tr>
+		<tr>
+		{{#Roll}}
+		<tr>
+			<td class="tcat">{{Roll}}</td>
+		</tr>
+		{{/Roll}}
+		</tr><br>
+	</table>
+</rolltemplate>
+
+<!--Début scripts-->
+<script type="text/worker">
+	const buttonlist = ["principal","equipement","grimoire", "overlord"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+
+	/* ===== PARAMETERS ==========
+	destinations = the name of the attribute that stores the total quantity
+        		   can be a single attribute, or an array: ['total_cost', 'total_weight']
+        		   If more than one, the matching fields must be in the same order. 
+    section = name of repeating fieldset, without the repeating_
+    fields = the name of the attribute field to be summed
+          	 destination and fields both can be a single attribute: 'weight'
+          	 or an array of attributes: ['weight','number','equipped']
+	*/
+	
+	//Fonction repeatingSum
+	const repeatingSum = (destinations, section, fields) => {
+		if (!Array.isArray(destinations)) destinations = [destinations.replace(/\s/g, '').split(',')];
+		if (!Array.isArray(fields)) fields = [fields.replace(/\s/g, '').split(',')];
+		getSectionIDs(`repeating_${section}`, idArray => {
+			const attrArray = idArray.reduce((m, id) => [...m, ...(fields.map(field => `repeating_${section}_${id}_${field}`))], []);
+			getAttrs([...attrArray], v => {
+				const getValue = (section, id, field) => v[`repeating_${section}_${id}_${field}`] === 'on' ? 1 : parseFloat(v[`repeating_${section}_${id}_${field}`]) || 0;
+				const commonMultipliers = (fields.length <= destinations.length) ? [] : fields.splice(destinations.length, fields.length - destinations.length);
+				const output = {};
+				destinations.forEach((destination, index) => {
+					output[destination] = idArray.reduce((total, id) => total + getValue(section, id, fields[index]) * commonMultipliers.reduce((subtotal, mult) => subtotal * getValue(section, id, mult), 1), 0);
+				});
+				setAttrs(output);
+			}); 
+		}); 
+	};
+
+	//Calcul poids porté
+	on('change:repeating_inventory change:repeating_weapons change:repeating_rangedweapons change:repeating_munitions change:repeating_armor', function() {
+		repeatingSum("PdsPorteEqp","inventory",["EqpPds","EqpQte","WearEqp"]);
+		repeatingSum("PdsPorteWeap","weapons",["ArmePds","WearWeap"]);
+		repeatingSum("PdsPorteRangWeap", "rangedweapons",["RangedWeaponPds","WearRgdWeap"]);
+		repeatingSum("PdsPorteMun","munitions", ["MunitionPds", "MunitionQte", "WearMunition"]);
+		repeatingSum("PdsPorteArmor","armor",["ArmorPds","WearArmor"]);
+		getAttrs(['PdsPorteArmor','PdsPorteRangWeap','PdsPorteWeap','PdsPorteEqp', 'PdsPorteMun'], function(values){
+			var ArmorWeight = parseInt(values.PdsPorteArmor)
+			var RangWeapWeight = parseInt(values.PdsPorteRangWeap)
+			var WeapWeight = parseInt(values.PdsPorteWeap)
+			var EqpWeight = parseInt(values.PdsPorteEqp)
+			var MunitionWeight = parseInt(values.MunitionPds)*parseInt(values.MunitionQte)
+			
+			setAttrs({
+				PdsPorteTot: ArmorWeight+RangWeapWeight+WeapWeight+EqpWeight+MunitionWeight});
+		});
+	});
+
+    on('change:repeating_inventory remove:repeating_inventory', function() {
+		repeatingSum("PdsPorteEqp","inventory",["EqpPds","EqpQte","WearEqp"]);
+	});
+
+    on('change:repeating_weapons remove:repeating_weapons', function() {
+		repeatingSum("PdsPorteWeap","weapons",["ArmePds","WearWeap"]);
+	});
+
+	on('change:repeating_rangedweapons remove:repeating_rangedweapons', function() {
+		repeatingSum("PdsPorteRangWeap", "rangedweapons",["RangedWeaponPds","WearRgdWeap"]);
+	});
+
+	on('change:repeating_munitions remove:repeating_munitions', function() {
+		repeatingSum("PdsPorteMun","munitions", ["MunitionPds", "MunitionQte", "WearMunition"]);
+	});
+
+	on('change:repeating_armor remove:repeating_armor', function() {
+		repeatingSum("PdsPorteArmor","armor",["ArmorPds","WearArmor"]);
+	});
+
+	on('change:PdsPorteArmor change:PdsPorteRangWeap change:PdsPorteWeap change:PdsPorteEqp change:PdsPorteMun', function() {
+		getAttrs(['PdsPorteArmor','PdsPorteRangWeap','PdsPorteWeap','PdsPorteEqp', 'PdsPorteMun'], function(values){
+			var ArmorWeight = parseInt(values.PdsPorteArmor)
+			var RangWeapWeight = parseInt(values.PdsPorteRangWeap)
+			var WeapWeight = parseInt(values.PdsPorteWeap)
+			var EqpWeight = parseInt(values.PdsPorteEqp)
+			var MunitionWeight = parseInt(values.PdsPorteMun)
+
+			setAttrs({PdsPorteTot: ArmorWeight+RangWeapWeight+WeapWeight+EqpWeight+MunitionWeight});
+		});
+	});
+	//Fin calcul poids porté
+
+	//Dégats armes
+	on("change:repeating_weapons:moddegeffet change:repeating_weapons:effet change:repeating_weapons:pourcentage change:repeating_weapons:nbtour", function() {
+		getAttrs(["repeating_weapons_ModDegEffet", "repeating_weapons_Effet", "repeating_weapons_Pourcentage", "repeating_weapons_NbTour"], function(values) {
+			var modDeg = parseInt(values.repeating_weapons_ModDegEffet);
+			var effet = parseInt(values.repeating_weapons_Effet);
+			var pourcentage = parseInt(values.repeating_weapons_Pourcentage);
+			var nbTour = parseInt(values.repeating_weapons_NbTour);
+			var roll = '';
+			var rollEqp = '';
+			var nomEffet = '';
+
+			if (effet === 0) {
+				roll = '&{template:degats} {{perso=@{Name} }} {{name=@{ArmeNom} }} {{RollDegats=[[@{ArmeDeg}d10+@{ArmeDegMod}]] }}';
+				rollEqp = '&{template:degats} {{perso=@{Name} }} {{name=@{ArmeNom} }} {{RollDegats=[[@{ArmeDeg}d10+@{ArmeDegMod}]] }}';
+				nomEffet = 'Aucun';
+			} else {
+				roll = '&{template:degats} {{perso=@{Name} }} {{name=@{ArmeNom} }} {{RollDegats=[[@{ArmeDeg}d10+@{ArmeDegMod}]] }} {{Roll=[[1d100]] }} {{TotalDegats=[[@{ArmeDeg}d10+@{ArmeDegMod}+@{ModDegEffetResume}]] }} {{effet=@{EffetResume} }} {{pourcentage=[[@{PourcentageResume}]] }} {{RollTour=[[1d@{NbTourResume}]] }}';
+				rollEqp = '&{template:degats} {{perso=@{Name} }} {{name=@{ArmeNom} }} {{RollDegats=[[@{ArmeDeg}d10+@{ArmeDegMod}]] }} {{Roll=[[1d100]] }} {{TotalDegats=[[@{ArmeDeg}d10+@{ArmeDegMod}+@{ModDegEffet}]] }} {{effet=@{EffetName} }} {{pourcentage=[[@{Pourcentage}]] }} {{RollTour=[[1d@{NbTour}]] }}';
+
+				if(effet === 1) {
+					nomEffet = 'Paralysie';
+				} else if(effet === 2) {
+					nomEffet = 'Empoisonnement';
+				} else if(effet === 3) {
+					nomEffet = 'Affliction';
+				} else if(effet === 4) {
+					nomEffet = 'Brulûre';
+				} else if(effet === 5) {
+					nomEffet = 'Gel';
+				} else if(effet === 6) {
+					nomEffet = 'Électrocution';
+				} else if(effet === 7) {
+					nomEffet = 'Banissement';
+				}
+			}
+
+			setAttrs({
+				repeating_weapons_expressionRoll : roll,
+				repeating_weapons_expressionRollEqp : rollEqp,
+				repeating_weapons_ModDegEffetResume : modDeg,
+				repeating_weapons_EffetResume: nomEffet,
+				repeating_weapons_PourcentageResume: pourcentage,
+				repeating_weapons_NbTourResume: nbTour,
+				repeating_weapons_EffetName: nomEffet
+			});
+   		});
+	});
+
+	on("change:repeating_rangedweapons:moddegeffet change:repeating_rangedweapons:effet change:repeating_rangedweapons:pourcentage change:repeating_rangedweapons:nbtour", function() {
+		getAttrs(["repeating_rangedweapons_ModDegEffet", "repeating_rangedweapons_Effet", "repeating_rangedweapons_Pourcentage", "repeating_rangedweapons_NbTour"], function(values) {
+			var modDeg = parseInt(values.repeating_rangedweapons_ModDegEffet);
+			var effet = parseInt(values.repeating_rangedweapons_Effet);
+			var pourcentage = parseInt(values.repeating_rangedweapons_Pourcentage);
+			var nbTour = parseInt(values.repeating_rangedweapons_NbTour);
+			var roll = '';
+			var nomEffet = '';
+
+			if (effet === 0) {
+				roll = '&{template:degats} {{perso=@{Name} }} {{name=@{RangedWeaponName} }} {{RollDegats=[[@{RangedWeaponDeg}d10+@{RangedWeaponDegMod}]] }}';
+				rollEqp = '&{template:degats} {{perso=@{Name} }} {{name=@{RangedWeaponName} }} {{RollDegats=[[@{RangedWeaponDeg}d10+@{RangedWeaponDegMod}]] }}';
+				nomEffet = 'Aucun';
+			} else {
+				roll = '&{template:degats} {{perso=@{Name} }} {{name=@{RangedWeaponName} }} {{RollDegats=[[@{RangedWeaponDeg}d10+@{RangedWeaponDegMod}]] }} {{Roll=[[1d100]] }} {{TotalDegats=[[@{RangedWeaponDeg}d10+@{RangedWeaponDegMod}+@{ModDegEffetResume}]] }} {{effet=@{EffetResume} }} {{pourcentage=[[@{PourcentageResume}]] }} {{RollTour=[[1d@{NbTourResume}]] }}';
+				rollEqp = '&{template:degats} {{perso=@{Name} }} {{name=@{RangedWeaponName} }} {{RollDegats=[[@{RangedWeaponDeg}d10+@{RangedWeaponDegMod}]] }} {{Roll=[[1d100]] }} {{TotalDegats=[[@{RangedWeaponDeg}d10+@{RangedWeaponDegMod}+@{ModDegEffet}]] }} {{effet=@{EffetName} }} {{pourcentage=[[@{Pourcentage}]] }} {{RollTour=[[1d@{NbTour}]] }}';
+
+				if(effet === 1) {
+					nomEffet = 'Paralysie';
+				} else if(effet === 2) {
+					nomEffet = 'Empoisonnement';
+				} else if(effet === 3) {
+					nomEffet = 'Affliction';
+				} else if(effet === 4) {
+					nomEffet = 'Brulûre';
+				} else if(effet === 5) {
+					nomEffet = 'Gel';
+				} else if(effet === 6) {
+					nomEffet = 'Électrocution';
+				} else if(effet === 7) {
+					nomEffet = 'Banissement';
+				}
+			}
+
+			setAttrs({
+				repeating_rangedweapons_expressionRoll : roll,
+				repeating_weapons_expressionRollEqp : rollEqp,
+				repeating_rangedweapons_ModDegEffetResume : modDeg,
+				repeating_rangedweapons_EffetResume: nomEffet,
+				repeating_rangedweapons_PourcentageResume: pourcentage,
+				repeating_rangedweapons_NbTourResume: nbTour,
+				repeating_rangedweapons_EffetName: nomEffet
+			});
+   		});
+	});
+
+	on("change:repeating_munitions:moddegeffet change:repeating_munitions:effet change:repeating_munitions:pourcentage change:repeating_munitions:nbtour", function() {
+		getAttrs(["repeating_munitions_ModDegEffet", "repeating_munitions_Effet", "repeating_munitions_Pourcentage", "repeating_munitions_NbTour"], function(values) {
+			var modDeg = parseInt(values.repeating_munitions_ModDegEffet);
+			var effet = parseInt(values.repeating_munitions_Effet);
+			var pourcentage = parseInt(values.repeating_munitions_Pourcentage);
+			var nbTour = parseInt(values.repeating_munitions_NbTour);
+			var roll = '';
+			var nomEffet = '';
+
+			if (effet === 0) {
+				roll = '&{template:degats} {{perso=@{Name} }} {{name=@{MunitionName} }} {{RollDegats=[[@{MunitionDeg}d10+@{MunitionDegMod}]] }}';
+				rollEqp = '&{template:degats} {{perso=@{Name} }} {{name=@{MunitionName} }} {{RollDegats=[[@{MunitionDeg}d10+@{MunitionDegMod}]] }}';
+				nomEffet = 'Aucun';
+			} else {
+				roll = '&{template:degats} {{perso=@{Name} }} {{name=@{MunitionName} }} {{RollDegats=[[@{MunitionDeg}d10+@{MunitionDegMod}]] }} {{Roll=[[1d100]] }} {{TotalDegats=[[@{MunitionDeg}d10+@{MunitionDegMod}+@{ModDegEffetResume}]] }} {{effet=@{EffetResume} }} {{pourcentage=[[@{PourcentageResume}]] }} {{RollTour=[[1d@{NbTourResume}]] }}';
+				rollEqp = '&{template:degats} {{perso=@{Name} }} {{name=@{MunitionName} }} {{RollDegats=[[@{MunitionDeg}d10+@{MunitionDegMod}]] }} {{Roll=[[1d100]] }} {{TotalDegats=[[@{MunitionDeg}d10+@{MunitionDegMod}+@{ModDegEffet}]] }} {{effet=@{EffetName} }} {{pourcentage=[[@{Pourcentage}]] }} {{RollTour=[[1d@{NbTour}]] }}';
+
+				if(effet === 1) {
+					nomEffet = 'Paralysie';
+				} else if(effet === 2) {
+					nomEffet = 'Empoisonnement';
+				} else if(effet === 3) {
+					nomEffet = 'Affliction';
+				} else if(effet === 4) {
+					nomEffet = 'Brulûre';
+				} else if(effet === 5) {
+					nomEffet = 'Gel';
+				} else if(effet === 6) {
+					nomEffet = 'Électrocution';
+				} else if(effet === 7) {
+					nomEffet = 'Banissement';
+				}
+			}
+
+			setAttrs({
+				repeating_munitions_expressionRoll : roll,
+				repeating_munitions_expressionRollEqp : rollEqp,
+				repeating_munitions_ModDegEffetResume : modDeg,
+				repeating_munitions_EffetResume: nomEffet,
+				repeating_munitions_PourcentageResume: pourcentage,
+				repeating_munitions_NbTourResume: nbTour,
+				repeating_munitions_EffetName: nomEffet
+			});
+   		});
+	});
+
+	//Calcul vie
+	on("change:PdvActuel", function(){
+		getAttrs(["PdvTotal", "PdvActuel"], function(values){
+			var pdvActuel = parseInt(values.PdvActuel);
+			var pdvTotal = parseInt(values.PdvTotal);
+			var PourcentagePdv = (pdvActuel / pdvTotal) * 100;
+			var sante = 0;
+
+			if (PourcentagePdv <= 100 & PourcentagePdv >= 90) {
+				sante = 1;
+			} else if (PourcentagePdv <= 89.99 & PourcentagePdv >= 85) {
+				sante = 2;
+			} else if (PourcentagePdv <= 84.99 & PourcentagePdv >= 80) {
+				sante = 3;
+			} else if (PourcentagePdv <= 79.99 & PourcentagePdv >= 75) {
+				sante = 4;
+			} else if (PourcentagePdv <= 74.99 & PourcentagePdv >= 70) {
+				sante = 5;
+			} else if (PourcentagePdv <= 69.99 & PourcentagePdv >= 65) {
+				sante = 6;
+			} else if (PourcentagePdv <= 64.99 & PourcentagePdv >= 60) {
+				sante = 7;
+			} else if (PourcentagePdv <= 59.99 & PourcentagePdv >= 55) {
+				sante = 8;
+			} else if (PourcentagePdv <= 54.99 & PourcentagePdv >= 50) {
+				sante = 9;
+			} else if (PourcentagePdv <= 49.99 & PourcentagePdv >= 45) {
+				sante = 10;
+			} else if (PourcentagePdv <= 44.99 & PourcentagePdv >= 40) {
+				sante = 11;
+			} else if (PourcentagePdv <= 39.99 & PourcentagePdv >= 35) {
+				sante = 12;
+			} else if (PourcentagePdv <= 34.99 & PourcentagePdv >= 30) {
+				sante = 13;
+			} else if (PourcentagePdv <= 29.99 & PourcentagePdv >= 25) {
+				sante = 14;
+			} else if (PourcentagePdv <= 24.99 & PourcentagePdv >= 20) {
+				sante = 15;
+			} else if (PourcentagePdv <= 19.99 & PourcentagePdv >= 15) {
+				sante = 16;
+			} else if (PourcentagePdv <= 14.99 & PourcentagePdv >= 10) {
+				sante = 17;
+			} else if (PourcentagePdv <= 9.99 & PourcentagePdv >= 5) {
+				sante = 18;
+			} else if (PourcentagePdv <= 4.99 & PourcentagePdv >= 0) {
+				sante = 19;
+			}
+
+			setAttrs({
+				Sante: sante
+			});
+		});
+	});
+
+    on("change:Sante", function(){
+		getAttrs(["Sante"], function(values){
+			var sante = parseInt(values.Sante);
+			var effet = '';
+			var malusSante = 0;
+			var valSante = 0;
+
+			if (sante === 1) {
+				valSante = 19;
+			} else if (sante === 2) {
+				valSante = 18;
+			} else if (sante === 3) {
+				valSante = 17;
+			} else if (sante === 4) {
+				valSante = 16;
+			} else if (sante === 5) {
+				valSante = 15;
+			} else if (sante === 6) {
+				valSante = 14;
+			} else if (sante === 7) {
+				valSante = 13;
+			} else if (sante === 8) {
+				valSante = 12;
+			} else if (sante === 9) {
+				valSante = 11;
+			} else if (sante === 10) {
+				valSante = 10;
+			} else if (sante === 11) {
+				valSante = 9;
+			} else if (sante === 12) {
+				valSante = 8;
+			} else if (sante === 13) {
+				valSante = 7;
+			} else if (sante === 14) {
+				valSante = 6;
+			} else if (sante === 15) {
+				valSante = 5;
+			} else if (sante === 16) {
+				valSante = 4;
+			} else if (sante === 17) {
+				valSante = 3;
+			} else if (sante === 18) {
+				valSante = 2;
+			} else if (sante === 19) {
+				valSante = 1;
+			} else {
+				valSante = 20;
+			}
+
+			if (sante === 5 || sante === 6 || sante === 7 || sante === 8 || sante === 9) {
+				effet = "Blessure légère";
+				malusSante = -2;
+			} else if (sante === 10 || sante === 11 || sante === 12 || sante === 13) {
+				effet = "Blessure sérieuse";
+				malusSante = -5;
+			} else if (sante === 14 || sante === 15 || sante === 16 || sante === 17) {
+				effet = "Blessure critique";
+				malusSante = -10;
+			} else if (sante === 18 || sante === 19) {
+				effet = "Inconscient jusqu à soins";
+				malusSante = -20;
+			} else {
+				effet = "Tout va bien";
+				malusSante = 0;
+			}
+			setAttrs({ 
+				EffetSante: effet,
+				MalusSante: malusSante,
+				ValSante: valSante
+			});
+	  	});
+	});
+	//Fin calcul vie
+
+	//Honneur
+	on("change:Honneur", function(){
+		getAttrs(["Honneur"], function(values){
+			var honneur = parseInt(values.Honneur);
+			var alignement = '';
+			var valHonneur = 0;
+
+			if (honneur === -100) {
+				valHonneur = 20;
+			} else if (honneur === -90) {
+				valHonneur = 19;
+			} else if (honneur === -80) {
+				valHonneur = 18;
+			} else if (honneur === -70) {
+				valHonneur = 17;
+			} else if (honneur === -60) {
+				valHonneur = 16;
+			} else if (honneur === -50) {
+				valHonneur = 15;
+			} else if (honneur === -40) {
+				valHonneur = 14;
+			} else if (honneur === -30) {
+				valHonneur = 13;
+			} else if (honneur === -20) {
+				valHonneur = 12;
+			} else if (honneur === -10) {
+				valHonneur = 11;
+			} else if (honneur === 0) {
+				valHonneur = 10;
+			} else if (honneur === 10) {
+				valHonneur = 9;
+			} else if (honneur === 20) {
+				valHonneur = 8;
+			} else if (honneur === 30) {
+				valHonneur = 7;
+			} else if (honneur === 40) {
+				valHonneur = 6;
+			} else if (honneur === 50) {
+				valHonneur = 5;
+			} else if (honneur === 60) {
+				valHonneur = 4;
+			} else if (honneur === 70) {
+				valHonneur = 3;
+			} else if (honneur === 80) {
+				valHonneur = 2;
+			} else if (honneur === 90) {
+				valHonneur = 1;
+			} else if (honneur === 100) {
+				valHonneur = 0;
+			}
+
+			if (honneur <= 100 & honneur >= 40) {
+				alignement = "Bon";
+			} else if (honneur <= 30 & honneur >= -30) {
+				alignement = "Neutre";
+			} else if (honneur <= -40 & honneur >= -90) {
+				alignement = "Mauvais";
+			} else if (honneur === -100) {
+				alignement = "Âme damnée";
+			}
+			setAttrs({ 
+				Alignement: alignement,
+				HonEch: valHonneur
+			});
+	  	});
+	});
+	//Fin Honneur
+
+	//Affinité divine
+	on("change:AffDiv", function(){
+		getAttrs(["AffDiv"], function(values){
+			var affDiv = parseInt(values.AffDiv);
+			var affinDiv = 0;
+
+
+			if (affDiv === 0) {
+				affinDiv = 1;
+			} else if (affDiv === 1) {
+				affinDiv = 2;
+			} else if (affDiv === 2) {
+				affinDiv = 3;
+			} else if (affDiv === 3) {
+				affinDiv = 4;
+			} else if (affDiv === 4) {
+				affinDiv = 5;
+			} else if (affDiv === 5) {
+				affinDiv = 6;
+			} else if (affDiv === 6) {
+				affinDiv = 7;
+			} else if (affDiv === 7) {
+				affinDiv = 8;
+			} else if (affDiv === 8) {
+				affinDiv = 9;
+			} else if (affDiv === 9) {
+				affinDiv = 10;
+			} else if (affDiv === 10) {
+				affinDiv = 11;
+			}
+		
+			setAttrs({ 
+				affinDiv: affinDiv
+			});
+	  	});
+	});
+	//Fin Affinité divine
+
+</script>
+<!--Fin scripts-->
